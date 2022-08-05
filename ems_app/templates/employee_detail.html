@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-6">
+    <div class="card mb-5">
+        <div class="card-header">
+            <h2>Employee Details</h2>
+        </div>
+        <div class="card-body">
+            <h4>
+                {{ emp_detail.first_name|capfirst }} {{ emp_detail.last_name|capfirst }}
+                <hr>
+                <p><strong>Email: <span class="text-secondary">{{ emp_detail.email }}</span></strong></p>
+                
+                {% if emp_detail.phone_number %}
+                    <p><strong>Phone Number: <span class="text-secondary">{{ emp_detail.phone_number }}</span></strong></p>
+                {% else %}
+                    <p><strong>Phone Number: <span class="text-secondary">N/A</span></strong></p>
+                {% endif %}
+
+                <p><strong>Address: <span class="text-secondary">{{ emp_detail.address }}</span></strong></p>
+                
+                {% if emp_detail.gender %}
+                <p><strong>Gender: <span class="text-secondary">{{ emp_detail.gender }}</span></strong></p>
+                {% else %}
+                <p><strong>Gender: <span class="text-secondary">N/A</span></strong></p>
+                {% endif %}
+                 
+                <p><strong>Date of birth: <span class="text-secondary">{{ emp_detail.dob }}</span></strong></p>
+                <p><strong>Joining Date: <span class="text-secondary">{{ emp_detail.joining_date }}</span></strong></p>
+                <p><strong>Job(s) assigned: <span class="text-secondary"></span></strong></p>
+                {% if emp_detail.jobs.all %}
+                <ul class="list-group">
+                    {% for job in emp_detail.jobs.all %}
+                        <li class="list-group-item">{{ job.name }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <ul class="list-group">
+                    <li class="list-group-item">N/A</li>
+                </ul>
+                {% endif %}
+            </h4>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'home' %}" class="btn btn-back"><- Go Back</a>
+        </div>
+    </div>
+</div>
+
+<div>
+</div>
+{% endblock content %}
