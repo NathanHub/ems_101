@@ -10,3 +10,4 @@ class EmployeeAdmin(admin.ModelAdmin):
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
     list_display = ['name']
+    
