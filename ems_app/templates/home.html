@@ -3,12 +3,17 @@
 {% block content %}
 {% for employee in employees %}
 <div class="col-md-4">
-    <a class="card mb-3 text-decoration-none text-black slow-hover" href="{% url 'employee_detail' employee.id %}">
+    <a class="card mb-3 text-decoration-none text-black slow-hover" href="#">
+        <!-- <a class="card mb-3 text-decoration-none text-black slow-hover" href="{% url 'employee_detail' employee.id %}">-->
         <div class="card-header ">
             Full Name: {{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}
         </div>
         <div class="card-body">
             Email: <p>{{employee.email}}</p>
+    
+        </div>
+        <div class="card-body">
+           <button class="button-5">EDITAR</button>
         </div>
     </a>
 </div>

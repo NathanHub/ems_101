@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
     <nav class="navbar fixed-top navbar-default navbar-back">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{% url 'home' %}">
             <img alt="Brand" src="{% static 'imgs/client-management.png' %} " width="50" height="50">
             EMS 101
           </a>
@@ -24,7 +25,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center mb-5">
             <div class="col-md-6 text-center mt-5">
-                <h1>Employee Database</h1>
+                <h1>Employee Database 📚</h1>
                 <hr>
                 <h3 class="fs-6 text-secondary">
                   Easiest way to manage employees data
@@ -103,7 +104,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-3 mb-0" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
+      © 2023 Copyrights:
       <a class="text-white" href="#">www.com</a>
     </div>
     <!-- Copyright -->
